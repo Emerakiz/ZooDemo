@@ -6,24 +6,27 @@ using System.Threading.Tasks;
 
 namespace ZooDemo
 {
-    public class Parrot : Animal, ITrick
+    public class Parrot : Animal, ITrick, IFly
     {
         public Parrot(string name, int age, int startHp) : base(name, age, startHp)
         {
+            Diet = Diet.Omnivore;
         }
 
         public override string Speak()
         {
-            return "pip";
+            return "kra";
         }
 
-        public double DailyFoodKG()
-        {
-            return 0.5;
-        }
+        
         public string DoTrick()
         {
-            return "Visslar en melodi";
+            return "Whisle a melody";
+        }
+
+        public double FlyingSpeedKmh()
+        {
+            return 7;
         }
     }
 }

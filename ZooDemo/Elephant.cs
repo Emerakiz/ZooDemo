@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace ZooDemo
 {
-    public class Elephant : Animal
+    public class Elephant : Animal, ITrick, ICanRun
     {
+
         public Elephant(string name, int age, int startHp) : base(name, age, startHp)
         {
+            Diet = Diet.Herbivore;
+            DietMultiplier = 5.0;
         }
 
         public override string Speak()
@@ -17,14 +20,16 @@ namespace ZooDemo
             return "chuu";
         }
 
-        public override double DailyFoogKG()
-        {
-            return 10.0;
-        }
+
 
         public string DoTrick()
         {
-            return "lyfter en boll";
+            return $"{Name} lifts a ball";
+        }
+
+        public int RunSpeedKmh()
+        {
+            return 6;
         }
     }
 }
